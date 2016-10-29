@@ -38,10 +38,10 @@ def decode(x):
     return (''.join(dic.get(i, i.encode('utf-8')).decode('utf-8') for i in x))
 
 print(decode('+------------------------------------%'))
-print(decode('|         Price of the Day           |'))
+print(decode('|       Best Price of the Day        |') + "\tinstant-gaming: " + price)
 print(decode('|               ' + str(price) + '                |'))
 print(decode('\\------------------------------------/'))
 print(decode('+------------------------------------%'))
-print(decode('|        Average of Prices           |'))
+print(decode('|        Average of Prices           |') + "\tinstant-gaming: " + str(round(average, 2)))
 print(decode('|               ' + str(round(average, 2)) + '                |'))
 print(decode('\\------------------------------------/'))
