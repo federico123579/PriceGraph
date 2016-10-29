@@ -1,5 +1,6 @@
 import urllib, json, os, sys
 from pprint import pprint
+import datetime
 # Collect Data
 url = "https://extraction.import.io/query/extractor/d00472f3-457e-4b37-b710-4002797e3087?_apikey=ab96cf38f5fe40e69b3ae0a59c9a2711840b0bee59bd951f25b9a2ee4e2c9d05e7e5e29ae414029bf21cbc3f161452143630d8125cf5572ebcb9b321ffd4ac087ef33b9bcf6ad7330418ebdb43e2243e&url=https%3A%2F%2Fwww.instant-gaming.com%2Fit%2F1421-comprare-key-origin-battlefield-1%2F"
 new_number_choice = raw_input("Do you want to record a new value?(y/n)\n")
@@ -10,16 +11,17 @@ if new_number_choice == "y":
     price_str = json.dumps(data["extractorData"]["data"][0]["group"][0]["Price"][0]["text"])
     price = float(price_str[1:-7])
 # Write Data
+    now = datetime.datetime.now()
     with open("data.txt", "a") as myfile:
-            myfile.write(str(price) + "\n")
+            myfile.write(str(now.year) + '-' + str(now.month) + '-' + str(now.day) + ';' + str(price) + "\n")
 # If No
 elif new_number_choice == "n":
     with open("data.txt", 'rb') as fh:
         for line in fh:
             pass
-            price = line[0:-2]
+            price = line[11:-2]
 with open("data.txt") as f:
-    content = [float(x.strip('\n')) for x in f.readlines()]
+    content = [float(x.strip('\n')[11:]) for x in f.readlines()]
 average = sum(content) / len(content)
 # Writing
 os.system("cls")
