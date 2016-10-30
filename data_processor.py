@@ -12,7 +12,7 @@ if new_number_choice == "y":
     price = float(price_str[1:-7])
     with open("data.txt") as f:
         lines=f.readlines()
-        print lines[-1][11:-1]
+        previous_price = float(lines[-1][11:-1])
 # Write Data
     now = datetime.datetime.now()
     with open("data.txt", "a") as myfile:
