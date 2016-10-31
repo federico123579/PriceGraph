@@ -1,7 +1,7 @@
 # PriceGraph
 ## To-dos
-* Add "Discount" value
-* Scheduled data mine
-* GUI
-* Revision Code
-* Web Deployment
+- [ ] Add "Discount" value  @federico123579
+- [ ] Scheduled data mine
+- [ ] GUI
+- [ ] Revision Code
+- [ ] Web Deployment
