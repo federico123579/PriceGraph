@@ -1,6 +1,7 @@
 # PriceGraph
 ## To-dos
-* add Discount value
+* Add "Discount" value
+* Scheduled data mine
 * GUI
 * Revision Code
 * Web Deployment
