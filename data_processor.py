@@ -1,6 +1,6 @@
 import urllib, json, os, sys
-sys.path.insert(0, 'Modules')
-import librarian
+#sys.path.insert(0, 'Modules')
+#import librarian
 import datetime
 # Collect Data
 url = "https://extraction.import.io/query/extractor/518ceba2-e6e0-46d5-b607-170fb36c5108?_apikey=ab96cf38f5fe40e69b3ae0a59c9a2711840b0bee59bd951f25b9a2ee4e2c9d05e7e5e29ae414029bf21cbc3f161452143630d8125cf5572ebcb9b321ffd4ac087ef33b9bcf6ad7330418ebdb43e2243e&url=https%3A%2F%2Fwww.instant-gaming.com%2Fit%2F1421-comprare-key-origin-battlefield-1%2F%3Fcurrency%3DEUR"
@@ -21,7 +21,7 @@ with open("data.txt") as f:
         previous_price = float(lines[-1][11:-1])
         # Write Data
         with open("data.txt", "a") as f:
-            f.write(str(now.year) + '-' + str(now.month) + '-' + str(now.day) + ';' + str(price) + "\n")
+            f.write('%02d' % now.year + '-' + '%02d' % now.month + '-' + '%02d' % now.day + ';' + str(price) + "\n")
 with open("data.txt") as f:
     line = f.readlines()
     content = [float(x.strip('\n')[11:]) for x in line]
