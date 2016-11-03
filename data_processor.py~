@@ -27,7 +27,7 @@ with open("data.txt") as f:
     content = [float(x.strip('\n')[11:]) for x in line]
     average = sum(content) / len(content)
 # Writing
-os.system("clear")
+os.system("cls")
 dic = {
 '\\' : b'\xe2\x95\x9a',
 '-'  : b'\xe2\x95\x90',
