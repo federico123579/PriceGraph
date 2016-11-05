@@ -4,7 +4,7 @@ Website: https://federico123579.github.io/PriceGraph/
 - [X] Make a Module to extract data
 - [X] File library with url and XPath
 - [X] Revision Code
-- [ ] Add "Discount" value @federico123579 - *Working on*
+- [X] Automated process with library module
 - [ ] Scheduled data mine
 - [ ] GUI
 - [ ] Web Deployment
