@@ -15,13 +15,13 @@ with open("data.txt") as f:
         previous_price = float(lines[-1][11:-1])
         # Write Data
         with open("data.txt", "a") as f:
-            f.write('%02d' % now.year + '-' + '%02d' % now.month + '-' + '%02d' % now.day + ';' + str(price) + "\n")
+            f.write('%02d' % now.year + '-' + '%02d' % now.month + '-' + '%02d' % now.day + ',' + str(price) + "\n")
 with open("data.txt") as f:
     line = f.readlines()
     content = [float(x.strip('\n')[11:]) for x in line]
     average = sum(content) / len(content)
 # Writing
-os.system("cls")
+os.system("clear")
 dic = {
 '\\' : b'\xe2\x95\x9a',
 '-'  : b'\xe2\x95\x90',
