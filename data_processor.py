@@ -16,10 +16,23 @@ with open("data.txt") as f:
         # Write Data
         with open("data.txt", "a") as f:
             f.write('%02d' % now.year + '-' + '%02d' % now.month + '-' + '%02d' % now.day + ',' + str(price) + "\n")
+# Process
 with open("data.txt") as f:
     line = f.readlines()
-    content = [float(x.strip('\n')[11:]) for x in line]
-    average = sum(content) / len(content)
+    content = 0
+    value = 0
+    values = 0
+    for x in line:
+        try:
+            value = float(x.strip('\n')[11:])
+        except ValueError:
+            pass
+        if value != 0:
+            values += 1
+        else:
+            pass
+        content = content + value
+average = content / values
 # Writing
 os.system("clear")
 dic = {
