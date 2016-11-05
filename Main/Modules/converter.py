@@ -12,5 +12,14 @@ def convert():
             print new_line
         else:
             print line.strip('\n')
+def delete_last_line():
+    file_data = fileinput.input("../data.txt", inplace=True)
+    last_line = f.readlines()[-1][11:-1]
+    for line in file_data:
+        if last_line == line:
+            print ''
+        else:
+            print line.strip('\n')
+
 if __name__ == '__main__':
     convert()
