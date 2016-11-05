@@ -1,4 +1,4 @@
-Date,Battlefiled,Battlefont: Season Pass
+Date,Battlefield 1,Battlefront: Season Pass
 2016-10-30,43.89
 2016-10-31,44.99
 2016-11-01,44.99
