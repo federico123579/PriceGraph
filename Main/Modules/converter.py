@@ -13,14 +13,10 @@ def convert(link_to_file):
         else:
             print line.strip('\n')
 def delete_last_line(link_to_file):
-    file_data = fileinput.input(link_to_file, inplace=True)
-    with open(link_to_file) as f:
-        last_line = f.readlines()[-1][11:-1]
-    for line in file_data:
-        if last_line == line:
-            print ''
-        else:
-            print line.strip('\n')
+    with open(link_to_file, 'r') as f:
+        lines = f.readlines()
+    with open(link_to_file, 'w') as f:
+        f.writelines([item for item in lines[:-1]])
 
 if __name__ == '__main__':
     convert("../data.txt")
