@@ -1,8 +1,10 @@
 from library import library
+from converter import convert
 class Videogame:
-    def __init__(self, videogame_name, videogame_price):
-        self.name = videogame_name.upper()
+    def __init__(self, videogame_name, videogame_price, v_url):
+        self.name = videogame_name
         self.price = videogame_price
+        self.url = v_url
 def show_list():
     print library
 def search(name_of_it):
@@ -12,10 +14,10 @@ if __name__ == "__main__":
     if new_videogame_option == 1:
         name = raw_input("What's its name?")
         price = raw_input("What's its price?")
-        x = Videogame(name, price)
+        url = raw_input("What's its url?")
+        x = Videogame(name, price, url)
         print x.__dict__
         library.append(x.__dict__)
         with open("library.py", "w") as f:
             f.write("library = " + str(library))
-    show_list()
-    print search('BATTLEFIELD 1')
+        convert()
