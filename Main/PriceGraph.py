@@ -11,5 +11,6 @@ if new_videogame_option == 1:
     converter.delete_last_line('data.txt')
 else:
     pass
+converter.delete_last_line('data.txt')
 dataProcessor.collect_data('data.txt')
 grapher.send_to_make_graph()
