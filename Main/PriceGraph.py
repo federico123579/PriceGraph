@@ -1,6 +1,6 @@
 import sys
 sys.path.insert(0, 'Modules')
-import librarian, dataProcessor, grapher
+import librarian, dataProcessor, grapher, priceExtractor
 new_videogame_option = input("New Videogame?(1/0)")
 if new_videogame_option == 1:
     name = raw_input("What's its name?")
@@ -11,4 +11,5 @@ if new_videogame_option == 1:
 else:
     pass
 dataProcessor.collect_data('data.txt')
-grapher.send_to_make_graph()
+grapher.linear_graph('data.txt')
+grapher.box_plot(priceExtractor.import_price_average())

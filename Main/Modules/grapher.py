@@ -2,10 +2,10 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.plotly as py
 from library import library
-def send_to_make_graph():
+def linear_graph(link_to_file):
     py.sign_in('federico123579', 'tmp58hnp2w')
     # Import data from csv
-    df = pd.read_csv('data.txt')
+    df = pd.read_csv(link_to_file)
     data = []
     for count in range(len(library)):
         data.append(go.Scatter(
@@ -18,6 +18,21 @@ def send_to_make_graph():
     fig = go.Figure(data=data, layout=layout)
 
     # Plot data in the notebook
-    py.iplot(fig, filename='price-date-csv')
+    py.plot(fig, filename='price-date-csv')
+def box_plot(data_array):
+    data = [
+        go.Box(
+            y = data_array,
+            boxpoints = 'all',
+            jitter = 0.3,
+            pointpos = -1.8,
+            name = "Battlefield 1",
+            marker = dict(
+                color = 'rgb(0, 128, 128)',
+            )
+        )
+    ]
+    py.plot(data, filename='pirce-average-box-plot')
 if __name__ == '__main__':
-    send_to_make_graph()
+    path = raw_input("insert Path: ")
+    linear_graph(path)
