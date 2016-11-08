@@ -28,10 +28,7 @@ def box_plot(data_matrix):
                 boxpoints = 'all',
                 jitter = 0.3,
                 pointpos = -1.8,
-                name = library[x]['name'],
-                marker = dict(
-                    color = 'rgb(0, 128, 128)',
-                )
+                name = library[x]['name']
             )
         )
     py.plot(data, filename='pirce-average-box-plot')
