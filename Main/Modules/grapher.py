@@ -19,19 +19,21 @@ def linear_graph(link_to_file):
 
     # Plot data in the notebook
     py.plot(fig, filename='price-date-csv')
-def box_plot(data_array):
-    data = [
-        go.Box(
-            y = data_array,
-            boxpoints = 'all',
-            jitter = 0.3,
-            pointpos = -1.8,
-            name = "Battlefield 1",
-            marker = dict(
-                color = 'rgb(0, 128, 128)',
+def box_plot(data_matrix):
+    data = []
+    for x, val in enumerate(data_matrix):
+        data.append(
+            go.Box(
+                y = val,
+                boxpoints = 'all',
+                jitter = 0.3,
+                pointpos = -1.8,
+                name = library[x]['name'],
+                marker = dict(
+                    color = 'rgb(0, 128, 128)',
+                )
             )
         )
-    ]
     py.plot(data, filename='pirce-average-box-plot')
 if __name__ == '__main__':
     path = raw_input("insert Path: ")
