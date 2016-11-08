@@ -8,5 +8,5 @@ list = [
 ]
 for x, val in enumerate(library):
     val['url-average'] = list[x]
-with open('library.txt', 'w') as f:
+with open('library.py', 'w') as f:
     f.write('library = ' + str(library))
